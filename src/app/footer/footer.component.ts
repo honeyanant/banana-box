@@ -6,8 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  @Input()
-  footerInput: string;
+  @Input() footerInput: string;
 
   showFooterInput($event) {
     this.footerInput = $event.target.value;
