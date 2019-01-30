@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,8 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class FooterComponent {
   @Input() footerInput: string;
+  @Output() footerInputChanged = new EventEmitter<string>();
 
   showFooterInput($event) {
     this.footerInput = $event.target.value;
+    this.footerInputChanged.emit(this.footerInput);
   }
 }

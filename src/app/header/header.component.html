@@ -3,4 +3,4 @@
   <div class="header-output">{{headerInput}}</div>
 </div>
 <hr>
-<app-footer>[footerInput]="headerInput"</app-footer>
+<app-footer [footerInput]="headerInput" (footerInputChanged)="getHeaderInpu($event)"></app-footer>

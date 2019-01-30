@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  headerInput: string;
+  @Input() headerInput: string;
+
+  getHeaderInpu(name: string) {
+    this.headerInput = name;
+  }
 
   showHeaderInput($event) {
     this.headerInput = $event.target.value;
